@@ -1,0 +1,31 @@
+@import "@/app/variables.module.scss";
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+
+  nav {
+    .linkList {
+      ul {
+        display: flex;
+        gap: 2rem;
+
+        li {
+          list-style: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+  }
+}

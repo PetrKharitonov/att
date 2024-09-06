@@ -1,0 +1,28 @@
+$main-blue: #0d5fb3;
+$main-beige: #ece9dc;
+$black: #2a2623;
+
+.mainTitle {
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 87%;
+}
+
+.mainSubtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.textMain {
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 130%;
+}
+
+:export {
+  mainBlue: $main-blue;
+  mainBeige: $main-beige;
+  black: $black;
+}
