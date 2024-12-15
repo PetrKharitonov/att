@@ -13,14 +13,23 @@ import Lead from "./components/animated/Lead/Lead";
 
 import heroImage from "@/public/heroImage.png";
 import keyImage from "@/public/keyImage.png";
+import pr1 from "@/public/pr1.png"
+import pr2 from "@/public/pr2.png"
+import pr3 from "@/public/pr3.png"
+import pr5 from "@/public/pr5.png"
+import pr6 from "@/public/pr6.png"
+
+
 import LeadSmall from "./components/animated/LeadSmall/LeadSmall";
 import Principles from "./components/animated/Principles/Principles";
 
-const interTight = Inter_Tight({ subsets: ["latin"] });
+const interTight = Inter_Tight({ subsets: ["latin", "cyrillic"] });
+
 
 export default function Home() {
   /*   const backgroundColor = useMotionValue("#0D5FB3");
   const textColor = useMotionValue("#ffffff"); */
+
 
   const { backgroundColor, textColor } = useMotion();
 
@@ -39,14 +48,14 @@ export default function Home() {
 
   return (
     <motion.main
-      className={styles.main}
+      className={`${interTight.className} ${styles.main} `}
       style={{ backgroundColor: backgroundColor }}
     >
       <section className={styles.hero}>
         <div className={styles.content}>
           <motion.h1
             style={{ color: textColor }}
-            className={`${interTight.className} ${styles.mainTitle} ${variables.mainTitle}`}
+            className={`${styles.mainTitle} ${variables.mainTitle}`}
           >
             Ваш проводник <br />в мире торгов
           </motion.h1>
@@ -59,7 +68,7 @@ export default function Home() {
           </motion.p>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={heroImage} fill />
+          <Image src={heroImage} fill alt="main"/>
         </div>
       </section>
 
@@ -87,7 +96,7 @@ export default function Home() {
 
         <section className={styles.howInfo}>
           <div className={styles.imageContainer}>
-            <Image src={keyImage} fill />
+            <Image src={keyImage} fill alt="key"/>
           </div>
           <div className={styles.content}>
             <Lead
@@ -115,14 +124,17 @@ export default function Home() {
           <Principles
             principles={[
               {
+                img: pr1,
                 title: "Прозрачность",
                 subtitle: "всех торговых процедур для «продавца»;",
               },
               {
-                title: "Доступность",
-                subtitle: "торговых процедур для покупателя;",
+                img: pr2,
+                title: "Комфортный сервис",
+                subtitle: "участия торговых процедур;",
               },
               {
+                img: pr3,
                 title: "Максимально широкая экспозиция товара",
                 subtitle: "для целевых групп покупателей",
               },
@@ -132,25 +144,25 @@ export default function Home() {
                   "к условиям сотрудничества в зависимости от свойств товара и задач «продавца»;",
               },
               {
-                title: "Прозрачность",
-                subtitle: "всех торговых процедур для «продавца»;",
+                img: pr5,
+                title: "Безопасность и устойчивость ",
+                subtitle: "торговых процедур;",
               },
               {
-                title: "Доступность",
-                subtitle: "торговых процедур для покупателя;",
-              },
-              {
-                title: "Максимально широкая экспозиция товара",
-                subtitle: "для целевых групп покупателей",
-              },
-              {
-                title: "Индивидуальный подход ",
-                subtitle:
-                  "к условиям сотрудничества в зависимости от свойств товара и задач «продавца»;",
-              },
+                img: pr6,
+                title: "Конфиденциальность",
+              }
             ]}
           />
         </section>
+
+        <section className={styles.actives}>
+          <Lead text={["Примеры", "реализованных активов"]} />
+            
+
+        </section>
+
+    
 
         <div style={{ height: "40rem" }}></div>
       </motion.div>

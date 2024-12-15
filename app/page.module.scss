@@ -1,7 +1,14 @@
 .main {
+  display: none;
   width: 100%;
   width: 100%;
   padding: 0 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 2rem;
+  }
 }
 
 .hero {
@@ -97,4 +104,9 @@
 
 .principles {
   margin-top: 20rem;
+}
+
+
+.actives {
+  margin-top: 10rem;
 }

@@ -3,6 +3,7 @@
 import styles from "./style.module.scss";
 import variables from "@/app/variables.module.scss";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const defaultAnimations = {
@@ -33,6 +34,8 @@ const Principles = ({ principles }) => {
     }
   }, [isInView]);
 
+
+
   return (
     <motion.div
       ref={ref}
@@ -42,18 +45,21 @@ const Principles = ({ principles }) => {
       className={`${variables.textMain} ${styles.principles}`}
     >
       {principles.map((card, i) => (
-        <div className={styles.cardContainer}>
+        <div className={styles.cardContainer} key={`${card.title}_${i}`}>
           <motion.div
             className={styles.card}
-            key={`${card.title}_${i}`}
             variants={defaultAnimations}
           >
             <p>{i + 1}</p>
             <div className={styles.content}>
+              <div className={styles.imgContainer}>
+              {card.img && <Image src={card.img} fill alt={`${card.title}_${card.img}`}/>}
+              </div>
               <h3>{card.title}</h3>
               <p>{card.subtitle}</p>
             </div>
           </motion.div>
+          
         </div>
       ))}
     </motion.div>

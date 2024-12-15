@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useMotion } from "@/app/MotionContext";
 import LogoIcon from "./LogoIcon/logo";
 import styles from "./style.module.scss";
@@ -10,8 +11,11 @@ import { motion } from "framer-motion";
 const Header = () => {
   const { backgroundColor, textColor } = useMotion();
 
+  const [isOpened, setIsOpened] = useState(false);
+
+
   return (
-    <header className={styles.header}>
+    <header className={ `${styles.header} `}>
       <div className={styles.logo}>
         <LogoIcon fill={textColor} />
       </div>
@@ -34,6 +38,9 @@ const Header = () => {
       >
         заполнить анкету
       </motion.button>
+
+    {/* БУРГЕР СДЕЛАТЬ */}
+
     </header>
   );
 };
