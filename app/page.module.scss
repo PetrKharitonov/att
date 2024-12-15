@@ -1,5 +1,4 @@
 .main {
-  display: none;
   width: 100%;
   width: 100%;
   padding: 0 4rem;
@@ -46,9 +45,35 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 10rem;
+    grid-template-columns: 1fr;
+
+    .content {
+      order: 1;
+    }
+
+    .imageContainer {
+      width: 70%;
+      order: 0;
+      height: 30rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+    .imageContainer {
+      width: 100%;
+      height: 25rem;
+    }
+  }
+}
+
 .stat {
   margin-top: 10rem;
-  display: grid;
+  display: none; /* grid */
   grid-template-columns: 5fr 7fr;
   gap: 1rem;
   padding-bottom: 3rem;
@@ -80,7 +105,7 @@
 }
 
 .howInfo {
-  display: grid;
+  display: none; /* grid */
   grid-template-columns: 5fr 6fr 1fr;
   margin-top: 10rem;
   gap: 1rem;
@@ -105,7 +130,6 @@
 .principles {
   margin-top: 20rem;
 }
-
 
 .actives {
   margin-top: 10rem;
