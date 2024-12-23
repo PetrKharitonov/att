@@ -1,4 +1,4 @@
-.principles {
+.projects {
   margin-top: 2rem;
 
   width: 100%;
@@ -9,28 +9,25 @@
   .cardContainer {
     position: relative;
     width: 100%;
-    min-height: 24rem;
+    height: 24rem;
+
     .card {
       width: 100%;
       height: 100%;
       position: absolute;
-      background-color: #f8f7f9;
       display: flex;
       flex-direction: column;
-      padding: 0.8rem;
+      gap: 0.8rem;
 
-      .content {
         .imgContainer {
-          width: 100%;
-          height: 15rem;
+          margin-bottom: 0.5rem;
+          height: 17rem;
           position: relative;
 
           img {
-            object-fit: contain;
-            width: 100%;
+            object-fit: cover;
             
           }
-        }
       }
 
       h3 {
@@ -43,7 +40,7 @@
 
 @media screen and (max-width: 768px) {
   
-  .principles {
+  .projects {
     margin-top: 2rem;
     width: 100%;
     display: grid;
@@ -58,7 +55,7 @@
 
 @media screen and (max-width: 520px) {
   
-  .principles {
+  .projects {
     grid-template-columns: 1fr;
 
     .cardContainer {

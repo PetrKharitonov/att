@@ -21,7 +21,7 @@ const defaultAnimations = {
   },
 };
 
-const Principles = ({ principles }) => {
+const Ploshadki = ({ ploshadki }) => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: true });
@@ -42,22 +42,17 @@ const Principles = ({ principles }) => {
       initial="hidden"
       animate={controls}
       transition={{ staggerChildren: 0.1 }}
-      className={`${variables.textMain} ${styles.principles}`}
+      className={`${variables.textMain} ${styles.ploshadki}`}
     >
-      {principles.map((card, i) => (
-        <div className={styles.cardContainer} key={`${card.title}_${i}`}>
+      {ploshadki.map((ploshadka, i) => (
+        <div className={styles.cardContainer} key={`ploshadka_${i}`}>
           <motion.div
             className={styles.card}
             variants={defaultAnimations}
           >
-            <p>{i + 1}</p>
-            <div className={styles.content}>
               <div className={styles.imgContainer}>
-              {card.img && <Image src={card.img} fill alt={`${card.title}_${card.img}`}/>}
+              {ploshadka.img && <Image src={ploshadka.img} fill alt={`ploshadka_${i}`}/>}
               </div>
-              <h3>{card.title}</h3>
-              <p>{card.subtitle}</p>
-            </div>
           </motion.div>
 
         </div>
@@ -65,4 +60,4 @@ const Principles = ({ principles }) => {
     </motion.div>
   );
 };
-export default Principles;
+export default Ploshadki;

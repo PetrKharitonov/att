@@ -26,3 +26,24 @@ $black: #2a2623;
   mainBeige: $main-beige;
   black: $black;
 }
+
+
+@media screen and (max-width: 768px) {
+  .textMain {
+    font-size: 2rem;
+  }
+
+  .mainSubtitle {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .textMain {
+    font-size: 1.6rem;
+  }
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+}

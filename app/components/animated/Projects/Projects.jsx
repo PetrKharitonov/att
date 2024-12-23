@@ -21,7 +21,7 @@ const defaultAnimations = {
   },
 };
 
-const Principles = ({ principles }) => {
+const Projects = ({ projects }) => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: true });
@@ -42,27 +42,23 @@ const Principles = ({ principles }) => {
       initial="hidden"
       animate={controls}
       transition={{ staggerChildren: 0.1 }}
-      className={`${variables.textMain} ${styles.principles}`}
+      className={`${variables.textMain} ${styles.projects}`}
     >
-      {principles.map((card, i) => (
-        <div className={styles.cardContainer} key={`${card.title}_${i}`}>
+      {projects.map((project, i) => (
+        <div className={styles.cardContainer} key={`${project.name}_${i}`}>
           <motion.div
             className={styles.card}
             variants={defaultAnimations}
           >
-            <p>{i + 1}</p>
-            <div className={styles.content}>
-              <div className={styles.imgContainer}>
-              {card.img && <Image src={card.img} fill alt={`${card.title}_${card.img}`}/>}
-              </div>
-              <h3>{card.title}</h3>
-              <p>{card.subtitle}</p>
+            <div className={styles.imgContainer}>
+                <Image src={project.img} alt={`${project.name}_image`} fill/>
             </div>
+            <h3>{project.cost}</h3>
+            <p>{project.name}</p>
           </motion.div>
-
         </div>
       ))}
     </motion.div>
   );
 };
-export default Principles;
+export default Projects;

@@ -28,7 +28,7 @@ const Lead = ({ text }) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5, once: false });
+  const isInView = useInView(ref, { amount: 0.5, once: true });
 
   useEffect(() => {
     if (isInView) {

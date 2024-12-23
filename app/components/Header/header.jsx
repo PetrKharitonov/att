@@ -6,6 +6,7 @@ import LogoIcon from "./LogoIcon/logo";
 import BurgerIcon from "./BurgerIcon/burger";
 import styles from "./style.module.scss";
 import variables from "@/app/variables.module.scss";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 import CrossIcon from "./CrossIcon/cross";
@@ -18,7 +19,7 @@ const Header = () => {
   return (
     <motion.header
       className={styles.header}
-      style={{ backgroundColor: isOpened ? backgroundColor : "none" }}
+      style={{ backgroundColor: backgroundColor}}
     >
       <div className={styles.headerCont}>
         <div className={styles.logo}>
@@ -30,10 +31,9 @@ const Header = () => {
               style={{ color: textColor }}
               className={variables.textMain}
             >
-              <li>продавцу</li>
-              <li>покупателю</li>
-              <li>о нас</li>
-              <li>портфолио</li>
+              <Link href='#hero'>главная</Link>
+              <Link href='#about'>о компании</Link>
+              <Link href='#portfolio'>портфолио</Link>
             </motion.ul>
           </div>
         </nav>
@@ -41,7 +41,8 @@ const Header = () => {
           className={variables.textMain}
           style={{ color: backgroundColor, backgroundColor: textColor }}
         >
-          заполнить анкету
+          <Link href='#footer'>связаться</Link>
+          
         </motion.button>
 
         <div className={styles.burger} onClick={() => setIsOpened(!isOpened)}>
@@ -61,10 +62,9 @@ const Header = () => {
         <nav>
           <div className={styles.mobileList}>
             <motion.ul style={{ color: textColor }}>
-              <li>продавцу</li>
-              <li>покупателю</li>
-              <li>о нас</li>
-              <li>портфолио</li>
+              <Link href='#hero' onClick={() => setIsOpened(false)}>главная</Link>
+              <Link href='#about' onClick={() => setIsOpened(false)}>о компании</Link>
+              <Link href='#portfolio' onClick={() => setIsOpened(false)}>портфолио</Link>
             </motion.ul>
           </div>
         </nav>

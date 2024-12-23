@@ -3,6 +3,7 @@ import "./globals.css";
 import "./normalize.css";
 import Header from "./components/Header/header";
 import { MotionProvider } from "./MotionContext";
+import Footer from "./components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

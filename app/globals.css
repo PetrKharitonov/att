@@ -20,6 +20,12 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
 body {
   background-color: #0d5fb3;
 }

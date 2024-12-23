@@ -16,11 +16,24 @@ import keyImage from "@/public/keyImage.png";
 import pr1 from "@/public/pr1.png";
 import pr2 from "@/public/pr2.png";
 import pr3 from "@/public/pr3.png";
+import pr4 from "@/public/pr4.png";
 import pr5 from "@/public/pr5.png";
 import pr6 from "@/public/pr6.png";
 
+import project1 from "@/public/project1.png"
+import project2 from "@/public/project2.png"
+import project3 from "@/public/project3.png"
+
+import ploshadka1 from "@/public/ploshadka1.png"
+import ploshadka2 from "@/public/ploshadka2.png"
+import ploshadka3 from "@/public/ploshadka3.png"
+import ploshadka4 from "@/public/ploshadka4.png"
+
 import LeadSmall from "./components/animated/LeadSmall/LeadSmall";
 import Principles from "./components/animated/Principles/Principles";
+import Projects from "./components/animated/Projects/Projects";
+import Ploshadki from "./components/animated/Ploshadki/Ploshadki";
+import Footer from "./components/Footer/Footer";
 
 const interTight = Inter_Tight({ subsets: ["latin", "cyrillic"] });
 
@@ -28,7 +41,7 @@ export default function Home() {
   const { backgroundColor, textColor } = useMotion();
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.1, once: false });
+  const isInView = useInView(ref, { amount: 0.07, once: false });
 
   useEffect(() => {
     if (isInView) {
@@ -40,12 +53,48 @@ export default function Home() {
     }
   }, [isInView]);
 
+
+  const projects = [
+    {
+      img: project1,
+      name: "Здание автосалона в г. Санкт-Петербург",
+      cost: "313 100 000 ₽"
+    },
+    {
+      img: project2,
+      name: "Торгово-логистический комплекс «Декомарт» (г. Новосибирск, Толмачевская,15/1)",
+      cost: "350 000 000 ₽"
+    },
+    {
+      img: project3,
+      name: "База отдыха «Ласточка»",
+      cost: "127 000 000 ₽"
+    },
+
+  ]
+
+
+  const ploshadki = [
+    {
+      img: ploshadka1,
+    },
+    {
+      img: ploshadka2,
+    },
+    {
+      img: ploshadka3,
+    },
+    {
+      img: ploshadka4,
+    },
+  ]
+
   return (
     <motion.main
       className={`${interTight.className} ${styles.main} `}
       style={{ backgroundColor: backgroundColor }}
     >
-      <section className={styles.hero}>
+      <section className={styles.hero} id="hero">
         <div className={styles.content}>
           <motion.h1
             style={{ color: textColor }}
@@ -67,7 +116,7 @@ export default function Home() {
       </section>
 
       <motion.div ref={ref} style={{ color: textColor }}>
-        <section className={styles.stat}>
+        <section className={styles.stat} id="about">
           <h2 className={variables.mainSubtitle}>
             Более <span>8 лет </span> на рынке
           </h2>
@@ -133,6 +182,7 @@ export default function Home() {
                 subtitle: "для целевых групп покупателей",
               },
               {
+                img: pr4,
                 title: "Индивидуальный подход ",
                 subtitle:
                   "к условиям сотрудничества в зависимости от свойств товара и задач «продавца»;",
@@ -150,11 +200,34 @@ export default function Home() {
           />
         </section>
 
-        <section className={styles.actives}>
+        <section className={styles.actives} id="portfolio">
           <Lead text={["Примеры", "реализованных активов"]} />
+
+         <Projects projects={projects}/>
+          
         </section>
 
-        <div style={{ height: "40rem" }}></div>
+        <section className={styles.actives}>
+          <Lead text={["Мы аккредитованы на следующих", "электронных торговых площадках"]} />
+
+          <Ploshadki ploshadki={ploshadki}/>
+          
+        </section>
+        <section className={styles.footer} id="footer">
+          <h1
+            className={`${styles.mainTitle} ${variables.mainTitle}`}
+          >
+            Связаться с нами
+          </h1>
+
+          <p className={`${variables.mainSubtitle}`}>+7 962 123 32 32</p>
+          </section>
+
+
+        <div style={{ height: "30rem" }}></div>
+
+
+
       </motion.div>
     </motion.main>
   );
